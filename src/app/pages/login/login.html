@@ -1,1 +1,47 @@
-<p>login works!</p>
+<div class="login">
+  <h1>Login</h1>
+
+  <div class="login-container">
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Email Address"
+      />
+
+      <div
+        class="error"
+        *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+      >
+        Valid email required
+      </div>
+
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+      />
+
+      <div
+        class="error"
+        *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+      >
+        Password required
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid">
+        Login
+      </button>
+
+      <!-- REGISTER LINK -->
+      <p class="register-text">
+        Don't have an account?
+        <a routerLink="/register">Register</a>
+      </p>
+
+    </form>
+
+  </div>
+</div>

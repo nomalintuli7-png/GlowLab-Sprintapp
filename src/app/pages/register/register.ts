@@ -1,9 +1,45 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
-  imports: [],
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './register.html',
-  styleUrl: './register.css',
+  styleUrls: ['./register.css']
 })
-export class Register {}
+export class RegisterComponent {
+
+  user = {
+    username: '',
+    email: '',
+    password: ''
+  };
+
+  constructor(private router: Router) {}
+
+  register() {
+    if (!this.user.username || !this.user.email || !this.user.password) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    // Save to localStorage
+    localStorage.setItem('user', JSON.stringify(this.user));
+
+    alert("Registration successful!");
+
+    console.log("Registered user:", this.user);
+
+    // reset form
+    this.user = {
+      username: '',
+      email: '',
+      password: ''
+    };
+
+    // navigate AFTER success
+    this.router.navigate(['/login']);
+  }
+}
