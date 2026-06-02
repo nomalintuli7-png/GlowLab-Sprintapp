@@ -1,9 +1,6 @@
-cart.ts
-
-
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CartService } from '..';
+import { CartService } from '../../service/cart';
 import { Router } from '@angular/router';
 
 @Component({
@@ -64,6 +61,5 @@ export class CartComponent implements OnInit {
     this.cartItems = [];
     this.total = 0;
 
-    // optional: stay on same page OR show message
   }
 }
