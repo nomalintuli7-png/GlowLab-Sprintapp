@@ -1,26 +1,26 @@
 <section class="categories">
 
-  <a class="category" routerLink="/category/FACE">
+  <a class="category" routerLink="/category/face">
     <img src="https://i.pinimg.com/736x/3a/e1/06/3ae1067e1be6aaa7b7061a885264521d.jpg">
-    <p>FACE</p>
+    <p>Face</p>
 
   </a>
 
-  <a class="category" routerLink="/category/EYES">
+  <a class="category" routerLink="/category/eyes">
     <img src="https://i.pinimg.com/1200x/1b/e0/55/1be055ea4554f4bf2ede4fca7c16c088.jpg">
-    <p>EYES</p>
+    <p>Eyes</p>
   </a>
 
 
 
-  <a class="category" routerLink="/category/LIPS">
+  <a class="category" routerLink="/category/lips">
     <img src="https://i.pinimg.com/1200x/7d/71/48/7d7148ab9850cbe83962a959bcbebf57.jpg">
-    <p>LIPS</p>
+    <p>Lips</p>
   </a>
 
-  <a class="category" routerLink="/category/SKINCARE">
+  <a class="category" routerLink="/category/skincare">
     <img src="https://i.pinimg.com/736x/3a/fe/85/3afe85f281344a0baba784dda8b41800.jpg">
-    <p>SKINCARE</p>
+    <p>Skincare</p>
   </a>
 
 </section>
@@ -40,9 +40,6 @@
       Search
     </button>
 
-  <button class="button" (click)="addToCart(product)">
-          Add To Cart
-        </button>
   </div>
 
 
@@ -60,7 +57,9 @@
 
         <p class="price">R{{ product.price }}</p>
 
-
+        <button class="button" (click)="addToCart(product)">
+          Add To Cart
+        </button>
 
       </div>
 
