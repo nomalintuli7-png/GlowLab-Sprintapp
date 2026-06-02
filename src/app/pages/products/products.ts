@@ -37,4 +37,8 @@ export class ProductsComponent implements OnInit {
     this.searchText = '';
     this.filtered = this.products;
   }
+
+  // 🛒 add to cart (placeholder, implement as needed)
+  addToCart(product: any) {
+    console.log('Adding to cart:', product);}
 }
