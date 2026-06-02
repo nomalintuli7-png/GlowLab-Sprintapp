@@ -1,1 +1,67 @@
-<p>products works!</p>
+<section class="categories">
+
+  <a class="category" routerLink="/category/FACE">
+    <img src="https://i.pinimg.com/736x/3a/e1/06/3ae1067e1be6aaa7b7061a885264521d.jpg">
+    <p>FACE</p>
+
+  </a>
+
+  <a class="category" routerLink="/category/EYES">
+    <img src="https://i.pinimg.com/1200x/1b/e0/55/1be055ea4554f4bf2ede4fca7c16c088.jpg">
+    <p>EYES</p>
+  </a>
+
+
+
+  <a class="category" routerLink="/category/LIPS">
+    <img src="https://i.pinimg.com/1200x/7d/71/48/7d7148ab9850cbe83962a959bcbebf57.jpg">
+    <p>LIPS</p>
+  </a>
+
+  <a class="category" routerLink="/category/SKINCARE">
+    <img src="https://i.pinimg.com/736x/3a/fe/85/3afe85f281344a0baba784dda8b41800.jpg">
+    <p>SKINCARE</p>
+  </a>
+
+</section>
+<section class="products">
+  <h2>Products</h2>
+
+  <div class="search-product">
+
+    <input
+  type="text"
+  placeholder="Search product..."
+  [(ngModel)]="searchText"
+  (input)="searchProduct()"
+/>
+
+    <button (click)="searchProduct()">
+      Search
+    </button>
+
+  </div>
+
+
+
+  <div class="product-grid">
+
+    <div class="card" *ngFor="let product of filtered">
+
+      <img [src]="product.image" alt="product">
+
+      <div class="card-content">
+
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+
+        <p class="price">R{{ product.price }}</p>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

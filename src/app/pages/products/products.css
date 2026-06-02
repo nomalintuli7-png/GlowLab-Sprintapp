@@ -1,0 +1,209 @@
+/* =========================
+   CATEGORY SECTION
+========================= */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  padding: 50px 20px;
+  flex-wrap: wrap;
+  background-position:center ;
+ background-color: #C8A96B;
+  
+}
+
+.category {
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  color: #222;
+}
+
+.category:hover {
+  transform: translateY(-5px);
+}
+
+.category img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 2px solid #C8A96B;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.category:hover img {
+  transform: scale(1.05);
+}
+
+.category p {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================
+   PRODUCTS SECTION
+========================= */
+.products {
+  padding: 60px 20px;
+  background: #FFFDF9
+}
+
+.products h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #0d0d0d;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   PRODUCT GRID (3 per row)
+========================= */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1200px;
+  margin: auto;
+}
+/* =========================
+   PRODUCT CARD (FIXED WIDTH ISSUE)
+========================= */
+.card {
+  background: rgb(255, 255, 255);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 2px solid #C8A96B;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+.card img {
+  width: 180px;
+  height: 285px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+/* =========================
+   TEXT CONTENT
+========================= */
+.card h3 {
+  font-size: 18px;
+  margin: 0;
+  color: #222;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 0;
+  color: #040404;
+  font-weight: bold;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  text-align: left;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 15px;
+  color: #222;
+}
+
+.price {
+  margin: 0;
+  font-size: 14px;
+  color: #c89b5c;
+  font-weight: bold;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.button {
+  margin-top: auto;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #111, #333);
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #c89b5c, #b07f67);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products h2 {
+    font-size: 30px;
+  }
+}
+
+.search-product {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0 40px;
+}
+
+.search-product input {
+  width: 300px;
+  padding: 12px;
+  border-radius: 30px;
+  border: 2px solid #C8A96B;
+  outline: none;
+}
+
+.search-product button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #060606;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-product button:hover {
+  opacity: 0.9;
+}
