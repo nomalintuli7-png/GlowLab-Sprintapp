@@ -61,5 +61,6 @@ export class CartComponent implements OnInit {
     this.cartItems = [];
     this.total = 0;
 
+   
   }
 }
