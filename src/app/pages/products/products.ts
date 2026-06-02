@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { ProductService } from '../../service/products';
+import { CartService } from '../../service/cart';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-products',
@@ -16,29 +19,38 @@ export class ProductsComponent implements OnInit {
   filtered: any[] = [];
   searchText = '';
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private cartService: CartService
+
+
+
+  ) {}
+
+  toastr = inject(ToastrService);
+
 
   ngOnInit(): void {
-    // ✅ load products from service
     this.products = this.productService.getProducts();
     this.filtered = this.products;
   }
 
-  // 🔍 search products
   searchProduct() {
     this.filtered = this.products.filter(product =>
-      product.name.toLowerCase().includes(this.searchText.toLowerCase()) ||
-      product.description.toLowerCase().includes(this.searchText.toLowerCase())
+      product.name.toLowerCase().includes(this.searchText.toLowerCase())
     );
   }
 
-  // 🔄 reset search (optional but useful)
-  resetSearch() {
-    this.searchText = '';
-    this.filtered = this.products;
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+    // alert('Added To Cart');
+    this.toastr.success('added to cart');
+
   }
 
-  // 🛒 add to cart (placeholder, implement as needed)
-  addToCart(product: any) {
-    console.log('Adding to cart:', product);}
+  // OPTIONAL: add new product (if you need later)
+  addProduct(newProduct: any) {
+    this.products.push(newProduct);
+    this.filtered = this.products;
+  }
 }
