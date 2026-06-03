@@ -16,6 +16,7 @@ export class RegisterComponent {
     email: '',
     password: ''
   };
+  private users: any[] = [];
 
   constructor(private router: Router) {}
 
@@ -24,9 +25,16 @@ export class RegisterComponent {
       alert("Please fill all fields");
       return;
     }
+    const localUser = localStorage.getItem('user')
 
+    if(localUser) {
+      this.users = JSON.parse(localUser)
+    } 
+    
+    this.users.push(this.user);
+    
     // Save to localStorage
-    localStorage.setItem('user', JSON.stringify(this.user));
+    localStorage.setItem('user', JSON.stringify(this.users));
 
     alert("Registration successful!");
 

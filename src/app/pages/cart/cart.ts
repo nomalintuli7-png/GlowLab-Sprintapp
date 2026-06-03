@@ -57,9 +57,12 @@ export class CartComponent implements OnInit {
 
     alert('Checkout successful!');
 
-    this.cartService.clearCart();
-    this.cartItems = [];
-    this.total = 0;
+this.cartService.clearCart();
+this.cartItems = [];
+this.total = 0;
+
+// redirect to products
+this.router.navigate(['/products']);
 
    
   }

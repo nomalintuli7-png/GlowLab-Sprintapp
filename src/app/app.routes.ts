@@ -7,6 +7,7 @@ import { CartComponent } from './pages/cart/cart';
 import { Contacts } from './pages/contacts/contacts';
 import { RegisterComponent } from './pages/register/register';
 
+
 export const routes: Routes = [
      
   { path: '', component: Home },
