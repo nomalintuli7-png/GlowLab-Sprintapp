@@ -1,6 +1,6 @@
 /* Page background */
 .cart {
-    background: #efe6db;
+    background: #FFFDF9;
     height: 100vh;
     padding: 40px 20px;
     
@@ -40,7 +40,7 @@
     padding: 15px;
     border-radius: 14px;
     background: #faf7f4;
-    border: 1px solid #eee;
+    border: 2px solid #C8A96B;
     transition: 0.3s;
   }
   
@@ -82,7 +82,7 @@
   }
   
   .qty-control button {
-    width: 28px;
+    width: 48px;
     height: 28px;
     border-radius: 6px;
     border: none;
@@ -135,7 +135,18 @@
   }
   
   .checkout-btn:hover {
-    background: linear-gradient(135deg, #b07f67, #c89b5c);
+    background: linear-gradient(135deg, #c89b5c, #b07f67);
     transform: translateY(-2px);
   }
   
+/* TABLET */
+@media (max-width: 768px) {
+  .cart {
+    padding: 30px 15px;
+  }}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .cart {
+    padding: 20px 10px;
+  }}

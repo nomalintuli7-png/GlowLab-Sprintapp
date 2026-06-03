@@ -15,42 +15,79 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ProductsComponent implements OnInit {
 
+  selectedCategory = 'all';
+
   products: any[] = [];
   filtered: any[] = [];
   searchText = '';
 
+  // ✅ FIX: modal variables INSIDE class
+  selectedProduct: any = null;
+  isModalOpen = false;
+
   constructor(
     private productService: ProductService,
     private cartService: CartService
-
-
-
   ) {}
 
   toastr = inject(ToastrService);
-
 
   ngOnInit(): void {
     this.products = this.productService.getProducts();
     this.filtered = this.products;
   }
 
+  // CATEGORY FILTER
+  filterByCategory(category: string) {
+    this.selectedCategory = category;
+    this.applyFilters();
+  }
+
+  // SEARCH
   searchProduct() {
-    this.filtered = this.products.filter(product =>
-      product.name.toLowerCase().includes(this.searchText.toLowerCase())
-    );
+    this.applyFilters();
+  }
+
+  applyFilters() {
+    const text = this.searchText.toLowerCase();
+
+    this.filtered = this.products.filter(product => {
+
+      const matchesText =
+        product.name.toLowerCase().includes(text) ||
+        product.description.toLowerCase().includes(text);
+
+      const matchesCategory =
+        this.selectedCategory === 'all' ||
+        product.category === this.selectedCategory;
+
+      return matchesText && matchesCategory;
+    });
   }
 
   addToCart(product: any) {
     this.cartService.addToCart(product);
-    // alert('Added To Cart');
-    this.toastr.success('added to cart');
-
+    this.toastr.success('Added to cart');
   }
 
-  // OPTIONAL: add new product (if you need later)
   addProduct(newProduct: any) {
     this.products.push(newProduct);
     this.filtered = this.products;
+  }
+
+  // ✅ MODAL FUNCTIONS (FIXED LOCATION)
+  openProduct(product: any) {
+    this.selectedProduct = product;
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+    this.selectedProduct = null;
+  }
+
+  addToCartFromModal(product: any) {
+    this.cartService.addToCart(product);
+    this.toastr.success('Added to cart');
   }
 }
