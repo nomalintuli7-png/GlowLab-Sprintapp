@@ -21,6 +21,10 @@ export class ProductsComponent implements OnInit {
   filtered: any[] = [];
   searchText = '';
 
+  // ✅ FIX: modal variables INSIDE class
+  selectedProduct: any = null;
+  isModalOpen = false;
+
   constructor(
     private productService: ProductService,
     private cartService: CartService
@@ -33,31 +37,30 @@ export class ProductsComponent implements OnInit {
     this.filtered = this.products;
   }
 
-  // ✅ CATEGORY CLICK FILTER
+  // CATEGORY FILTER
   filterByCategory(category: string) {
     this.selectedCategory = category;
     this.applyFilters();
   }
 
-  // ✅ SEARCH FIX
+  // SEARCH
   searchProduct() {
     this.applyFilters();
   }
 
-  // ✅ MAIN FILTER LOGIC (SEARCH + CATEGORY TOGETHER)
   applyFilters() {
     const text = this.searchText.toLowerCase();
-  
+
     this.filtered = this.products.filter(product => {
-  
+
       const matchesText =
         product.name.toLowerCase().includes(text) ||
         product.description.toLowerCase().includes(text);
-  
+
       const matchesCategory =
         this.selectedCategory === 'all' ||
         product.category === this.selectedCategory;
-  
+
       return matchesText && matchesCategory;
     });
   }
@@ -67,9 +70,24 @@ export class ProductsComponent implements OnInit {
     this.toastr.success('Added to cart');
   }
 
-  // OPTIONAL: add new product
   addProduct(newProduct: any) {
     this.products.push(newProduct);
     this.filtered = this.products;
+  }
+
+  // ✅ MODAL FUNCTIONS (FIXED LOCATION)
+  openProduct(product: any) {
+    this.selectedProduct = product;
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+    this.selectedProduct = null;
+  }
+
+  addToCartFromModal(product: any) {
+    this.cartService.addToCart(product);
+    this.toastr.success('Added to cart');
   }
 }

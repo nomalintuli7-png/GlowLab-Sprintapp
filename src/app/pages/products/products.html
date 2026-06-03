@@ -51,7 +51,8 @@
 
     <div class="card" *ngFor="let product of filtered">
 
-      <img [src]="product.image" alt="product">
+     
+      <img [src]="product.image" (click)="openProduct(product)" />
 
       <div class="card-content">
 
@@ -69,4 +70,26 @@
     </div>
 
   </div>
+  <!-- PRODUCT MODAL -->
+<div class="modal-backdrop" *ngIf="isModalOpen" (click)="closeModal()">
+
+  <div class="modal-content" (click)="$event.stopPropagation()">
+
+    <img [src]="selectedProduct?.image" />
+
+    <h2>{{ selectedProduct?.name }}</h2>
+
+    <p>{{ selectedProduct?.description }}</p>
+
+    <p class="price">R{{ selectedProduct?.price }}</p>
+
+    <button (click)="addToCartFromModal(selectedProduct)">
+      Add to Cart
+    </button>
+
+    <button class="close" (click)="closeModal()">X</button>
+
+  </div>
+
+</div>
 </section>
