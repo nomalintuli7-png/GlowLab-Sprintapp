@@ -1,194 +1,87 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: rgb(6, 6, 6);
-  flex-wrap: wrap; /* helps prevent overflow */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  background:#000;
 }
 
-/* LOGO */
-.logo {
-  color: #C8A96B;
-  font-weight: 900;
-  font-size: 28px;
-  letter-spacing: 2px;
+.logo{
+  color:#C8A96B;
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:2px;
 }
 
-/* LINKS */
-.nav-links {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
+.nav-links{
+  display:flex;
+  gap:30px;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #C8A96B;
-  font-size: 16px;
-  transition: 0.3s;
-  font-weight: 900;
+.nav-links a{
+  text-decoration:none;
+  color:#C8A96B;
+  font-weight:700;
+  transition:0.3s;
 }
 
-.nav-links a:hover {
-  color: #fcf7f2;
+.nav-links a:hover{
+  color:white;
 }
 
+/* ICON CONTAINER */
+.action-buttons{
+  display:flex;
+  align-items:center;
+  gap:25px;
 
-.nav-icons {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
+  background:#C8A96B;
+  padding:12px 25px;
+  border-radius:50px;
 
-
-button {
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  background: #C8A96B;
-  cursor: pointer;
-  transition: 0.3s;
-  width: 50px;
-  font-weight: 700;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
 }
 
 /* ICONS */
-.icon {
-  font-size: 24px;
-  text-decoration: none;
-  transition: 0.3s;
-  color: #C8A96B;
+.icon{
+  color:rgb(9, 9, 9);
+  font-size:22px;
+  text-decoration:none;
+  background:none;
+  border:none;
+  cursor:pointer;
+  transition:0.3s ease;
 }
 
-.icon:hover {
-  transform: scale(1.1);
+.icon:hover{
+  transform:scale(1.15);
 }
 
-.login-icon {
-  color: #C8A96B;
-  font-size: 28px;
-  text-shadow: 0 0 8px rgba(200, 169, 107, 0.4);
+.logout-btn{
+  padding:0;
 }
 
-.cart-icon {
-  position: relative;
+/* CART */
+.cart-icon{
+  position:relative;
 }
 
-/* BADGE */
-.cart-badge {
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  background: red;
-  color: white;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-  font-weight: bold;
-}
+.cart-badge{
+  position:absolute;
+  top:-8px;
+  right:-10px;
 
-/* =========================
-   TABLET
-========================= */
-@media (max-width: 992px) {
-  .navbar {
-    padding: 15px 20px;
-  }
+  width:18px;
+  height:18px;
 
-  .nav-links {
-    gap: 15px;
-  }
-}
+  border-radius:50%;
+  background:red;
+  color:white;
 
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-
-  .nav-icons {
-    width: 100%;
-    justify-content: space-between;
-  }
-}
-
-/* =========================
-   SMALL PHONES
-========================= */
-@media (max-width: 480px) {
-  .logo {
-    font-size: 22px;
-  }
-
-  .nav-links a {
-    font-size: 14px;
-  }
-
-  .icon {
-    font-size: 20px;
-  }
-  
-  .icon:hover{
-    transform:scale(1.2);
-  }
-  
-  .cart-icon{
-    position:relative;
-   
-  }
-  
-  .nav-icons{
-    display:flex;
-    align-items:center;
-    gap:20px;
-  }
-  
-  .login-icon {
-    color: #C8A96B;
-    font-size: 100px;
-  }
-  
-  .login-icon {
-    color: #C8A96B;
-    font-size: 24px;
-  }
-  .icon:hover{
-    transform:scale(1.1);
-  }
-  
- 
-  .cart-badge{
-    position:absolute;
-    top:-8px;
-    right:-10px;
-    background:red;
-    color:white;
-  
-    width:20px;
-    height:20px;
-  
-    border-radius:50%;
-  
-    display:flex;
-    justify-content:center;
-    align-items:center;
-  
-    font-size:12px;
-    font-weight:bold;
-  }
+  font-size:11px;
+  font-weight:bold;
 }

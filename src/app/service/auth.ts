@@ -9,10 +9,10 @@ export class AuthService {
 
   constructor() {
     const savedUsers = localStorage.getItem('user');
-    console.log(savedUsers)
+  
     if (savedUsers) {
       this.users = JSON.parse(savedUsers);
-      console.log(this.users)
+  
     }
   }
 
@@ -22,21 +22,27 @@ export class AuthService {
   }
 
   login(email: string, password: string): boolean {
-    const user = this.users.find(
-      u => u.email === email && u.password === password
-    );
 
+    const savedUsers = localStorage.getItem('user');
+  
+    if (savedUsers) {
+      this.users = JSON.parse(savedUsers);
+    }
+  
+    const user = this.users.find(
+      (u: any) =>
+        u.email === email &&
+        u.password === password
+    );
+  
     if (user) {
       localStorage.setItem('loggedIn', 'true');
       localStorage.setItem('currentUser', JSON.stringify(user));
       return true;
     }
-
+  
     return false;
   }
-
-  
-
   logout() {
     localStorage.removeItem('loggedIn');
     localStorage.removeItem('currentUser');

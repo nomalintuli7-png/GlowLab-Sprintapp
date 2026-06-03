@@ -5,46 +5,34 @@
   </div>
 
   <div class="nav-links">
-
     <a routerLink="">Home</a>
     <a routerLink="/about">About</a>
-
     <a routerLink="/products">Products</a>
-   
-
-<a routerLink="/contacts">Contacts</a>
-
-
-
-
-
-
-
+    <a routerLink="/contacts">Contacts</a>
   </div>
 
-  <div class="nav-icons">
+  <div class="action-buttons">
 
-
-    <button (click)="logout()">
-      Logout
-    </button>
-
-    <a routerLink="/login" class="icon login-icon">
+    <!-- Login -->
+    <a routerLink="/login" class="icon">
       <i class="fa-solid fa-user"></i>
     </a>
 
-
+    <!-- Cart -->
     <a routerLink="/cart" class="icon cart-icon">
+      <i class="fa-solid fa-cart-shopping"></i>
 
-     <button>Cart</button>
-
-     @if (count > 0) {
-      <span class="cart-badge">
-        {{ count }}
-      </span>
-    }
-
+      @if (count > 0) {
+        <span class="cart-badge">
+          {{ count }}
+        </span>
+      }
     </a>
+
+    <!-- Logout -->
+    <button class="icon logout-btn" (click)="logout()">
+      <i class="fa-solid fa-right-from-bracket"></i>
+    </button>
 
   </div>
 

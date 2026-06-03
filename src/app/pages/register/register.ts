@@ -38,7 +38,6 @@ export class RegisterComponent {
 
     alert("Registration successful!");
 
-    console.log("Registered user:", this.user);
 
     // reset form
     this.user = {
