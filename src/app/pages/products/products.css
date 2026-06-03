@@ -224,7 +224,18 @@
   align-items: center;
   z-index: 999;
 }
-
+.modal-backdrop button {
+  margin-top: auto;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #111, #333);
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 /* MODAL BOX */
 .modal-content {
   background: white;
