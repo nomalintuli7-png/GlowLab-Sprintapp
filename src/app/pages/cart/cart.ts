@@ -21,6 +21,9 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.loadCart();
   }
+  shopping() {
+    this.router.navigate(['/products']);
+  }
 
   loadCart() {
     this.cartItems = this.cartService.getCartItems();
