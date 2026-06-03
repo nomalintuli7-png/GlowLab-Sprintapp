@@ -1,24 +1,33 @@
-/* =========================
-   HERO SECTION
-========================= */
+
 .hero{
   position: relative;
   height: 90vh;
   display: flex;
   align-items: center;
   padding-left: 80px;
-  background: url('https://images.pexels.com/photos/37575400/pexels-photo-37575400.jpeg') center/cover no-repeat;
-  color: rgb(6, 1, 1);
+  color: white;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(200, 169, 107, 0.25)
+    ),
+    url('https://i.pinimg.com/736x/ce/5e/37/ce5e379fc721141484bc30852ae35f85.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 
-/* =========================
-   HERO TEXT
-========================= */
+
 .hero-text{
-  position: relative;
-  z-index: 1;
-  max-width: 500px;
+ text-align: center;
+  max-width: 700px;
+  margin-left: 500px;
+ margin-bottom: 150px;
+
+ 
 }
 
 .hero-text h1{
@@ -31,31 +40,28 @@
 .hero-text p{
   font-size: 20px;
   margin-bottom: 30px;
-  color: rgb(6, 1, 1);;
+  color: rgb(245, 243, 243);;
 }
 
-/* =========================
-   BUTTON
-========================= */
+
 .hero button{
   padding: 15px 30px;
   border: none;
-  background: linear-gradient(135deg, #111, #333);
-  color: white;
+ background-color:#c08c25 ;
+  color: rgb(5, 5, 5);
   border-radius: 30px;
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
+  font-weight: 700;
 }
 
 .hero button:hover{
-  background: linear-gradient(135deg, #c89b5c, #b07f67);
+  background: #C8A96B;
   transform: translateY(-3px);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+
 @media (max-width: 900px){
   .hero-text h1{
     font-size: 40px;

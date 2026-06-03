@@ -15,6 +15,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ProductsComponent implements OnInit {
 
+  selectedCategory = 'all';
+
   products: any[] = [];
   filtered: any[] = [];
   searchText = '';
@@ -22,33 +24,50 @@ export class ProductsComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private cartService: CartService
-
-
-
   ) {}
 
   toastr = inject(ToastrService);
-
 
   ngOnInit(): void {
     this.products = this.productService.getProducts();
     this.filtered = this.products;
   }
 
+  // ✅ CATEGORY CLICK FILTER
+  filterByCategory(category: string) {
+    this.selectedCategory = category;
+    this.applyFilters();
+  }
+
+  // ✅ SEARCH FIX
   searchProduct() {
-    this.filtered = this.products.filter(product =>
-      product.name.toLowerCase().includes(this.searchText.toLowerCase())
-    );
+    this.applyFilters();
+  }
+
+  // ✅ MAIN FILTER LOGIC (SEARCH + CATEGORY TOGETHER)
+  applyFilters() {
+    const text = this.searchText.toLowerCase();
+  
+    this.filtered = this.products.filter(product => {
+  
+      const matchesText =
+        product.name.toLowerCase().includes(text) ||
+        product.description.toLowerCase().includes(text);
+  
+      const matchesCategory =
+        this.selectedCategory === 'all' ||
+        product.category === this.selectedCategory;
+  
+      return matchesText && matchesCategory;
+    });
   }
 
   addToCart(product: any) {
     this.cartService.addToCart(product);
-    // alert('Added To Cart');
-    this.toastr.success('added to cart');
-
+    this.toastr.success('Added to cart');
   }
 
-  // OPTIONAL: add new product (if you need later)
+  // OPTIONAL: add new product
   addProduct(newProduct: any) {
     this.products.push(newProduct);
     this.filtered = this.products;

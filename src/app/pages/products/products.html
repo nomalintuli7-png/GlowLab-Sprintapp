@@ -1,29 +1,32 @@
 <section class="categories">
 
-  <a class="category" routerLink="/category/face">
+  <div class="category" (click)="filterByCategory('all')">
+    <img src="https://i.pinimg.com/736x/13/ae/69/13ae694853fb644431163e5421b198be.jpg">
+    <p>All</p>
+  </div>
+
+  <div class="category" (click)="filterByCategory('face')">
     <img src="https://i.pinimg.com/736x/3a/e1/06/3ae1067e1be6aaa7b7061a885264521d.jpg">
     <p>Face</p>
+  </div>
 
-  </a>
-
-  <a class="category" routerLink="/category/eyes">
+  <div class="category" (click)="filterByCategory('eyes')">
     <img src="https://i.pinimg.com/1200x/1b/e0/55/1be055ea4554f4bf2ede4fca7c16c088.jpg">
     <p>Eyes</p>
-  </a>
+  </div>
 
-
-
-  <a class="category" routerLink="/category/lips">
+  <div class="category" (click)="filterByCategory('Lips')">
     <img src="https://i.pinimg.com/1200x/7d/71/48/7d7148ab9850cbe83962a959bcbebf57.jpg">
     <p>Lips</p>
-  </a>
+  </div>
 
-  <a class="category" routerLink="/category/skincare">
+  <div class="category" (click)="filterByCategory('skincare')">
     <img src="https://i.pinimg.com/736x/3a/fe/85/3afe85f281344a0baba784dda8b41800.jpg">
     <p>Skincare</p>
-  </a>
+  </div>
 
 </section>
+
 <section class="products">
   <h2>Products</h2>
 
