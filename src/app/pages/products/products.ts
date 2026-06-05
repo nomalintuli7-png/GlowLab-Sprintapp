@@ -21,7 +21,7 @@ export class ProductsComponent implements OnInit {
   filtered: any[] = [];
   searchText = '';
 
-  // ✅ FIX: modal variables INSIDE class
+
   selectedProduct: any = null;
   isModalOpen = false;
 
@@ -37,13 +37,13 @@ export class ProductsComponent implements OnInit {
     this.filtered = this.products;
   }
 
-  // CATEGORY FILTER
+  
   filterByCategory(category: string) {
     this.selectedCategory = category;
     this.applyFilters();
   }
 
-  // SEARCH
+  
   searchProduct() {
     this.applyFilters();
   }
@@ -75,7 +75,7 @@ export class ProductsComponent implements OnInit {
     this.filtered = this.products;
   }
 
-  // ✅ MODAL FUNCTIONS (FIXED LOCATION)
+
   openProduct(product: any) {
     this.selectedProduct = product;
     this.isModalOpen = true;

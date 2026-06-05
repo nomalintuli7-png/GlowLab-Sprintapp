@@ -24,12 +24,14 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // cart count
+    
     this.cartService.cartCount$.subscribe(value => {
+      
+
       this.count = value;
     });
 
-    // login state
+    
     this.isLoggedIn = this.authService.isLoggedIn();
   }
 

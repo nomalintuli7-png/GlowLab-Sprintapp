@@ -1,6 +1,4 @@
-/* =========================
-   CATEGORY SECTION
-========================= */
+
 .categories {
   display: flex;
   justify-content: center;
@@ -44,9 +42,7 @@
   font-weight: 600;
 }
 
-/* =========================
-   PRODUCTS SECTION
-========================= */
+
 .products {
   padding: 60px 20px;
   background: #FFFDF9
@@ -60,9 +56,7 @@
   letter-spacing: 1px;
 }
 
-/* =========================
-   PRODUCT GRID (3 per row)
-========================= */
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -70,9 +64,7 @@
   max-width: 1200px;
   margin: auto;
 }
-/* =========================
-   PRODUCT CARD (FIXED WIDTH ISSUE)
-========================= */
+
 .card {
   background: rgb(255, 255, 255);
   border-radius: 16px;
@@ -93,9 +85,7 @@
   transform: translateY(-4px);
 }
 
-/* =========================
-   PRODUCT IMAGE
-========================= */
+
 .card img {
   width: 180px;
   height: 285px;
@@ -103,9 +93,7 @@
   border-radius: 10px;
   flex-shrink: 0;
 }
-/* =========================
-   TEXT CONTENT
-========================= */
+
 .card h3 {
   font-size: 18px;
   margin: 0;
@@ -140,9 +128,7 @@
   font-weight: bold;
 }
 
-/* =========================
-   BUTTON
-========================= */
+
 .button {
   margin-top: auto;
   width: 100%;
@@ -161,9 +147,7 @@
   transform: translateY(-2px);
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
+
 @media (max-width: 900px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -211,7 +195,6 @@
 
 
 
-/* BACKDROP */
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -236,7 +219,7 @@
   cursor: pointer;
   transition: 0.3s;
 }
-/* MODAL BOX */
+
 .modal-content {
   background: white;
   padding: 20px;
@@ -246,21 +229,21 @@
   position: relative;
 }
 
-/* IMAGE */
+
 .modal-content img {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 10px;
 }
 
-/* PRICE */
+
 .price {
   font-weight: bold;
   margin: 10px 0;
   color: #c89b5c;
 }
 
-/* CLOSE BUTTON */
+
 .close {
   position: absolute;
   top: 10px;

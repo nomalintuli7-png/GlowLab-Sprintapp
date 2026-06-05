@@ -43,7 +43,7 @@ export class LoginComponent {
 
       alert("Login successful!");
 
-      // redirect logic after login
+     
       const redirect = localStorage.getItem('redirectAfterLogin');
 
       if (redirect === 'checkout') {

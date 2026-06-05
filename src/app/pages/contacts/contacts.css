@@ -7,7 +7,7 @@
     background: #FFFDF9;
   }
   
-  /* LEFT SIDE */
+  
   .info {
     flex: 1;
     color: #070101;
@@ -26,7 +26,7 @@
     margin-bottom: 15px;
   }
   
-  /* FORM */
+  
   .form {
     flex: 1;
     max-width: 500px;
@@ -46,7 +46,7 @@
     min-height: 150px;
   }
   
-  /* INPUTS */
+  
   input,
   textarea {
     padding: 14px;
@@ -65,7 +65,7 @@
     box-shadow: 0 0 8px rgba(200,169,107,0.3);
   }
   
-  /* BUTTON */
+  
   button {
     background: #050505;
     border: none;
@@ -83,7 +83,7 @@
     transform: translateY(-2px);
   }
   
-  /* TABLETS */
+  
   @media (max-width: 992px) {
     .contact {
       padding: 60px 30px;
@@ -91,7 +91,7 @@
     }
   }
   
-  /* MOBILE */
+  
   @media (max-width: 768px) {
     .contact {
       flex-direction: column;
@@ -111,7 +111,7 @@
     }
   }
   
-  /* SMALL PHONES */
+ 
   @media (max-width: 480px) {
     .contact {
       padding: 40px 15px;

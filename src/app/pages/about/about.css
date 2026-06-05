@@ -8,7 +8,7 @@
   background: #fffdfa;
 }
 
-/* TEXT SIDE */
+
 .about-text {
   width: 50%;
 }
@@ -22,7 +22,7 @@
  
 }
 
-/* GOLD LINE UNDER TITLE */
+
 .about-text h2::after {
   width: 60px;
   height: 3px;
@@ -31,14 +31,14 @@
   margin-top: 10px;
 }
 
-/* INTRO */
+
 .intro {
   color: #555;
   margin-bottom: 25px;
   
 }
 
-/* HEADINGS */
+
 .about-text h3 {
   margin-top: 20px;
   color: #c9a24a;
@@ -46,13 +46,13 @@
   font-size: x-large;
 }
 
-/* PARAGRAPHS */
+
 .about-text p {
   color: #0a0a0a;
  
 }
 
-/* LIST */
+
 .about-text ul {
   padding-left: 20px;
 }
@@ -62,12 +62,12 @@
   position: relative;
 }
 
-/* GOLD BULLETS */
+
 .about-text li::marker {
   color: #C8A96B;
 }
 
-/* IMAGE */
+
 .about-image {
   display: flex;
   align-items: center;
@@ -88,13 +88,13 @@
 
 
 
-/* HOVER EFFECT */
+
 .about-image img:hover {
   transform: scale(1.05);
   opacity: 1;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;

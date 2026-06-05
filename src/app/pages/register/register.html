@@ -2,35 +2,36 @@
   <h1>Register</h1>
 
   <div class="register-container">
-<form (ngSubmit)="register()">
 
-  <input 
-    type="text" 
-    name="username" 
-    placeholder="Username" 
-    [(ngModel)]="user.username"
-    required 
-  />
+    <form (ngSubmit)="register()">
 
-  <input 
-    type="email" 
-    name="email" 
-    placeholder="Email" 
-    [(ngModel)]="user.email"
-    required 
-  />
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        [(ngModel)]="user.username"
+        required
+      />
 
-  <input 
-    type="password" 
-    name="password" 
-    placeholder="Password" 
-    [(ngModel)]="user.password"
-    required 
-  />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        [(ngModel)]="user.email"
+        required
+      />
 
-  <button type="submit">Register</button>
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        [(ngModel)]="user.password"
+        required
+      />
 
-</form>
+      <button type="submit">Register</button>
+
+    </form>
 
   </div>
 </div>
